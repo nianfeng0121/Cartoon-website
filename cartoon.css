@@ -1,0 +1,355 @@
+/* Setting background and global font colours */
+body {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+.background-image-blur-whitewash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(15px) contrast(0.2) brightness(1.7);
+  z-index: -1;
+}
+
+/* title setting */
+.title-container {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  margin-bottom: 20px;
+}
+
+/* main title style */
+.main-title {
+  margin-top: 0px;
+  font-size: 6em;
+  margin-bottom: 10px;
+}
+
+/* subtitle style */
+.subtitle {
+  font-size: 1em;
+  margin: 0;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters-title {
+  transform: translate(20px, -12px); 
+ 
+}
+.filters-title + hr {/* Sets the color of the bottom line */
+  border: none;
+  height: 2px;
+  background-color: #ccc; 
+  margin-bottom: 25px; 
+}
+
+.filter-section {
+  flex-basis: 20%;
+  padding: 40px;
+}
+
+.filter-section>div {
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+.filter-section>div>form {
+  padding: 0px 0px 0px 90px;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; /* This will push the label to the left and the slider to the right */ /* 加大滑动条的间距 */    
+  margin-bottom: 30px; /* 增加每行滑动条之间的间距 increase row spacing*/
+  
+}
+.slider-label {
+  margin-right: 10px; 
+  font-size: 1.25rem;
+  font-weight: bold;
+  
+}
+.slider {
+  width: 200px;
+  height: 5px; 
+  background: #ddd;
+  border-radius: 2.5px; 
+  position: relative;
+  cursor: pointer;
+}
+.slider .knob {
+  width: 24px;
+  height: 24px;
+  background: #4CAF50;
+  border-radius: 50%;
+  position: absolute;
+  top: -9.5px;
+}
+.slider .knob span {
+  display: block;
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  line-height: 24px;
+}
+.slider .knob1 {
+  border: 3px solid #000;
+  background: white;
+  z-index:0;
+}
+.slider .knob2 {
+  border: 3px solid #000;
+  background: white;
+  z-index: 1;
+
+}
+.slider .color-fill {
+position: absolute;
+height: 100%; 
+background-color: black; 
+z-index: 0; 
+}
+
+.search-and-table {
+  display: flex;/* 使用flex布局对子元素进行居中对齐/Centre-aligning child elements using flex layout */
+  flex-direction: column;/* 垂直排列子元素  Vertical alignment of child elements*/
+  align-items: center;
+  justify-content: flex-start;/* 从顶部开始排列子元素from top to bottom */
+  padding: 20px;
+  flex-basis: 55%;
+}
+
+/* 设置搜索框的样式 set search style*/
+#characterSearch {
+  width: 100%; 
+  max-width: 1500px;
+  height: 40px;
+  margin: 20px 0;
+  padding: 5px 15px;
+  font-size: 1em;
+  border: 1px solid black;
+}
+#characterSearch::placeholder {/* txt inside characterSearch设置占位符文本的颜色 */
+  color: #000; 
+}
+
+table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid white;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+  border-bottom: 1.5px solid black;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+.comparison-form {
+  flex-basis: 20%;
+  padding: 20px;
+  border: 1.5px solid #000;
+  background-color: white;
+  margin-right: 25px;
+  height: 400px;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2); 
+}
+
+.comparison-area {
+  height: 260px; 
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.vs-text {
+  color: #f2f2f2;
+  font-size: 30px;
+}
+
+.character-name
+{
+  font:bold;
+  font-size: 1.5rem;
+}
+
+.comparison-form-title {
+  transform: translate(20px, -12px); 
+  font: bold;
+  font-size: 1.5rem;
+}
+
+.comparison-form-title + hr {
+  border: none;
+  height: 2px;
+  background-color: #ccc; /* Sets the color of the line */
+  margin-bottom: 25px; /* Adjust the space between the title and the line */
+}
+
+#comparisonHistory
+{
+  font-size: 1.2rem;
+}
+
+.character-profile {
+  background-color: black;
+  width: 150px; /* circle size */
+  height: 150px;
+  border-radius: 50%;/* create circle创建圆形 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Vertical stacking of images and text 垂直堆叠图片和文本 */
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.character-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;/* Covers the entire parent container 覆盖整个父容器，多余的图片部分会被裁剪 */
+  object-position: center;
+  border-radius: 50%;
+}
+
+.character-name {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 10px;
+  white-space: nowrap;/* prevent name next line防止名字换行 */
+}
+
+/* Description area style 描述区域样式 */
+.description-area {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 600px;
+  /* Adding transition effects makes it visually more layered 添加过渡效果，使得视觉上更有层次感 */
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2); 
+}
+
+.description-area p {
+  display: flex; /* Make the <p> a flex container */
+  justify-content: space-between; /* Space out the child elements */
+  align-items: center; /* Vertically center the child elements */
+  margin: 10px 0;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+/* Additional CSS to target the spans and give them widths so they can be spaced appropriately */
+.description-area span {
+  flex-basis: 30%; /* This makes each span take up 30% of the flex container's width */
+  text-align: center; 
+}
+
+.description-area p {
+  margin: 10px 0;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+
+.description-text {
+  color: #f2f2f2;
+  font-size: 30px;
+}
+
+.description-value {
+  
+  color: #f2f2f2;
+  display: none;
+}
+
+.middle {
+  position: relative;
+  background-color: white;
+  margin-left: 10px; 
+  width: 50%;
+  max-width: 350px;
+  border: 2px solid black;
+  padding: 25px;
+  height: 440px;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2); 
+}
+
+input[type="radio"] {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+input[type="radio"]:checked::before {
+  content: "\2713"; /* Unicode character for checkmark */
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 4px;
+}
+
+
+
+.content-section {
+  padding: 20px; 
+}
+
+.left-section, .right-section {
+  flex: 15%; 
+}
+
+#myTable input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+

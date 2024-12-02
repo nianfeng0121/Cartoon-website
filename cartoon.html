@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP5347 Assignment One</title>
+    <link rel="stylesheet" href="cartoon.css">
+    <script src="cartoon.js"></script>
+</head>
+
+<body>
+    <div class="title-container">
+        <h1 class="main-title">Cartoonopia</h1>
+        <h2 class="subtitle">The home of characters and cartoons!</h2>
+    </div>
+
+    <div class="background-image-blur-whitewash"></div>
+   
+    <div class="main-content">
+        <div class="middle">
+            <h2 class="filters-title">Filters</h2>
+            <hr>
+            <form>
+                <div class="slider-container">
+                    <label class="slider-label">Strength</label>
+                    <div class="slider" id="sliderStrength">
+                        <div class="color-fill"></div> 
+                        <div class="knob knob1" id="knobStrength1"><span id="valueStrength1"></span></div>
+                        <div class="knob knob2" id="knobStrength2"><span id="valueStrength2"></span></div>
+                    </div>
+                </div>                
+                <div class="slider-container">
+                    <label class="slider-label">Speed</label>
+                    <div class="slider" id="sliderSpeed">
+                        <div class="color-fill"></div> 
+                        <div class="knob knob1" id="knobSpeed1"><span id="valueSpeed1"></span></div>
+                        <div class="knob knob2" id="knobSpeed2"><span id="valueSpeed2"></span></div>
+                    </div>
+                </div>               
+                <div class="slider-container">
+                    <label class="slider-label">Skill</label>
+                    <div class="slider" id="sliderSkill">
+                        <div class="color-fill"></div> 
+                        <div class="knob knob1" id="knobSkill1"><span id="valueSkill1"></span></div>
+                        <div class="knob knob2" id="knobSkill2"><span id="valueSkill2"></span></div>
+                    </div>
+                </div>              
+                <div class="slider-container">
+                    <label class="slider-label">Fear Factor</label>
+                    <div class="slider" id="sliderFearFactor">
+                        <div class="color-fill"></div>
+                        <div class="knob knob1" id="knobFearFactor1"><span id="valueFearFactor1"></span></div>
+                        <div class="knob knob2" id="knobFearFactor2"><span id="valueFearFactor2"></span></div>
+                    </div>
+                </div>            
+                <div class="slider-container">
+                    <label class="slider-label">Power</label>
+                    <div class="slider" id="sliderPower">
+                        <div class="color-fill"></div>
+                        <div class="knob knob1" id="knobPower1"><span id="valuePower1"></span></div>
+                        <div class="knob knob2" id="knobPower2"><span id="valuePower2"></span></div>
+                    </div>
+                </div>    
+                <div class="slider-container">
+                    <label class="slider-label">Intelligence</label>
+                    <div class="slider" id="sliderIntelligence">
+                        <div class="color-fill"></div>
+                        <div class="knob knob1" id="knobIntelligence1"><span id="valueIntelligence1"></span></div>
+                        <div class="knob knob2" id="knobIntelligence2"><span id="valueIntelligence2"></span></div>
+                    </div>
+                </div>
+                <div class="slider-container">
+                    <label class="slider-label">Wealth</label>
+                    <div class="slider" id="sliderWealth">
+                        <div class="color-fill"></div>
+                        <div class="knob knob1" id="knobWealth1"><span id="valueWealth1"></span></div>
+                        <div class="knob knob2" id="knobWealth2"><span id="valueWealth2"></span></div>
+                    </div>
+                </div>
+            </form>
+
+        </div><section class="search-and-table">
+            <input type="search" id="characterSearch" name="characterSearch" placeholder="Search Characters">
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Strength</th>
+                        <th>Speed</th>
+                        <th>Skill</th>
+                        <th>Fear Factor</th>
+                        <th>Power</th>
+                        <th>Intelligence</th>
+                        <th>Wealth</th>
+                        <th>Selected</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable">
+                    <!-- Form content will be dynamically generated via JavaScript 表格内容将通过JavaScript动态生成 -->
+                </tbody>
+            </table>
+        </section>
+
+        <aside class="comparison-form">
+            <form>
+                <h3 class="comparison-form-title">Previous Comparisons</h3>
+                <hr>
+                <!-- Using table tags to display history使用table标签来展示历史记录 -->
+                <table id="comparisonHistory">
+                <!-- The rows of history will be dynamically generated by JavaScript 历史记录的行将通过JavaScript动态生成 -->
+    </table>
+            </form>
+        </aside>
+    </div>
+
+    <div class="comparison-area">
+        <div class="character-profile">
+            <span class="character-name" id="firstname"></span>
+            <img id="firstimg" alt="Unknown">
+        </div>
+      
+        <h2 class="vs-text">VS</h2>
+
+        <div class="character-profile">
+            <span class="character-name" id="secondname"></span>
+            <img id="secondimg" alt="Unknown">
+
+        </div>
+    </div>
+
+    <div class="description-area">
+        <p>
+        <span id="shows1" class="description-text"></span>
+        <span id="STRENGTHV1" class="description-value"></span>
+        STRENGTH
+        <span id="STRENGTHV2" class="description-value"></span>
+        <span id="shows2" class="description-text">
+        </p>
+        <p>
+        <span id="showsSpeed1" class="description-text"></span>
+        <span id="SPEEDV1" class="description-value"></span>
+        SPEED
+        <span id="SPEEDV2" class="description-value"></span>
+        <span id="showsSpeed2" class="description-text">
+        </p> 
+        <p>
+        <span id="showsSkill1" class="description-text"></span>
+        <span id="SKILLV1" class="description-value"></span>
+        SKILL
+        <span id="SKILLV2" class="description-value"></span>
+        <span id="showsSkill2" class="description-text"></span>       
+        </p>  
+        <p>
+        <span id="showsFear1" class="description-text"></span>
+        <span id="FEARV1" class="description-value"></span>
+        FEAR
+        <span id="FEARV2" class="description-value"></span>
+        <span id="showsFear2" class="description-text"></span>
+        </p>  
+        <p>
+        <span id="showsPower1" class="description-text"></span>
+        <span id="POWERV1" class="description-value"></span>
+        POWER
+        <span id="POWERV2" class="description-value"></span>
+        <span id="showsPower2" class="description-text"></span>
+        </p>
+        <p>
+        <span id="showsIntelligence1" class="description-text"></span>
+        <span id="INTELLIGENCEV1" class="description-value"></span>
+        INTELLIGENCE
+        <span id="INTELLIGENCEV2" class="description-value"></span>
+        <span id="showsIntelligence2" class="description-text">
+        </p> 
+        <p>
+        <span id="showsWealth1" class="description-text"></span>
+        <span id="WEALTHV1" class="description-value"></span>
+        WEALTH
+        <span id="WEALTHV2" class="description-value"></span>
+        <span id="showsWealth2" class="description-text"></span>
+        </p>  
+    </div>
+    </div>
+
+</body>
+</html>
